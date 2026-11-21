@@ -175,14 +175,14 @@ document.querySelector('#products .container')?.appendChild(productRange);
 // Use the available similar stamp and logo filenames when exact names are not present.
 const trustBadges = document.querySelector('.trust-badges');
 if (trustBadges) {
-  trustBadges.innerHTML = `<span class="trust-badge"><img src="images/bsi-stamp.png.png" alt="ISO 9001:2015 certified (BSI)"><span>ISO 9001:2015 certified (BSI).</span></span><span class="trust-badge"><img src="images/skz-stamp.png" alt="Quality approved"><span>Quality approved.</span></span><span class="trust-badge"><span>20-year warranty on products and service<sup>*</sup></span></span><span class="trust-badge">100% lead-free and termite-free</span>`;
+  trustBadges.innerHTML = `<span class="trust-badge"><img src="images/bsi-stamp.png" alt="BSI ISO 9001:2015 certification mark"><span>ISO 9001:2015 certified (BSI).</span></span><span class="trust-badge"><img src="images/skz-stamp.png" alt="Quality approved"><span>Quality approved.</span></span><span class="trust-badge"><span>20-year warranty on products and service<sup>*</sup></span></span><span class="trust-badge">100% lead-free and termite-free</span>`;
   const note = document.createElement('p');
   note.className = 'warranty-note';
   note.innerHTML = '*<a href="terms.html">Terms &amp; Conditions</a> apply.';
   trustBadges.after(note);
 }
 const prominanceNote = document.querySelector('.prominance-note');
-if (prominanceNote) prominanceNote.innerHTML = '<img src="images/prominance-logo.png.webp" alt="Prominance uPVC logo"><span>Built with Prominance uPVC systems.</span>';
+if (prominanceNote) prominanceNote.innerHTML = '<img src="images/prominance-logo.png" alt="Prominance uPVC logo"><span>Built with Prominance uPVC systems.</span>';
 
 document.getElementById('current-year').textContent = new Date().getFullYear();
 
