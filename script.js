@@ -194,11 +194,6 @@ if (!document.querySelector('.legal-links')) {
   document.querySelector('.footer-content')?.appendChild(legalLinks);
 }
 
-document.getElementById('enquiry-form')?.addEventListener('submit', (event) => {
-  event.preventDefault();
-  document.getElementById('form-status').textContent = 'Thank you. We will connect this enquiry form soon.';
-});
-
 // Show the intro once per browser visit. If this script fails, no splash is created.
 let hasSeenSplash = false;
 try {
