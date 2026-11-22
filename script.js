@@ -194,6 +194,38 @@ if (!document.querySelector('.legal-links')) {
   document.querySelector('.footer-content')?.appendChild(legalLinks);
 }
 
+const enquiryForm = document.getElementById('enquiry-form');
+if (enquiryForm) {
+  const submitButton = enquiryForm.querySelector('button[type="submit"]');
+  const formStatus = document.getElementById('form-status');
+
+  enquiryForm.addEventListener('submit', async (event) => {
+    if (!enquiryForm.reportValidity()) return;
+
+    event.preventDefault();
+    submitButton.disabled = true;
+    submitButton.textContent = 'Sending...';
+    formStatus.textContent = '';
+
+    try {
+      const response = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(new FormData(enquiryForm)).toString()
+      });
+
+      if (!response.ok) throw new Error('Form submission failed');
+      formStatus.textContent = 'Thank you! Your enquiry has been received. We will contact you soon.';
+      enquiryForm.reset();
+    } catch (error) {
+      formStatus.textContent = 'Sorry, something went wrong. Please call +91 8089113701 or message us on WhatsApp.';
+    } finally {
+      submitButton.disabled = false;
+      submitButton.textContent = 'Submit Enquiry';
+    }
+  });
+}
+
 // Show the intro once per browser visit. If this script fails, no splash is created.
 let hasSeenSplash = false;
 try {

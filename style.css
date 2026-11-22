@@ -50,6 +50,7 @@ body.dark-mode .review-card{background:#17283c;color:var(--ink);border-color:var
 body.dark-mode .feature-card:hover,body.dark-mode .product-card:hover{box-shadow:0 .7rem 1.5rem rgba(0,0,0,.28)}
 body.dark-mode .product-placeholder,body.dark-mode .map-placeholder{background:#132940;border-color:#42627d;color:#b7c7d4}
 body.dark-mode .enquiry-form,body.dark-mode .contact-details a{background:#17283c}
+body.dark-mode .form-status{color:#b7d8f5}
 body.dark-mode .enquiry-form input,body.dark-mode .enquiry-form textarea{background:#0f1b2a;color:var(--ink);border-color:#42627d}
 body.dark-mode .splash-screen{background:#0f1b2a}
 body.dark-mode .splash-logo{background:#fff;border-radius:.65rem;padding:.45rem}
