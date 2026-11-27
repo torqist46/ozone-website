@@ -152,30 +152,36 @@ if (featureGrid) {
 // Use simple colour swatches and keep the shades easy to change later.
 const colourList = document.querySelector('.colour-list');
 if (colourList) {
-  // Exact shades should be confirmed with the client.
+  // Shades are approximate and should be confirmed with the client.
   const colours = [
     ['White', '#FFFFFF'], ['Walnut', '#5D4037'], ['Dark Oak', '#4A3428'], ['Oak', '#C8A97E'],
-    ['Mahogany', '#4E1F12'], ['Silver Oak', '#A9A9A0'], ['Black', '#111111']
+    ['Mahogany', '#4E1F12'], ['Silver Oak', '#A9A9A0'], ['Black', '#111111'],
+    ['Golden Oak', '#C9A063'], ['Silver Brush', '#B9B7AE'], ['Anthracite Grey', '#3D4145'],
+    ['Woodec Oak Malt', '#8A6A4F'], ['Black Smooth 2', '#1C1C1C'], ['Wooden Oak Concrete', '#A9A096']
   ];
   colourList.innerHTML = '<strong>Available colours</strong><div class="colour-swatches">' + colours.map(([name, value]) => `<span class="colour-swatch"><span class="swatch-circle" style="background:${value}"></span><small>${name}</small></span>`).join('') + '<span class="colour-more">and more</span></div>';
 }
 
-// Add the five approved product variants with the closest available photos.
+// Add the approved product variants with available photos or plain placeholders.
 const productRange = document.createElement('section');
 productRange.className = 'product-range';
 productRange.setAttribute('aria-labelledby', 'product-range-title');
 productRange.innerHTML = `<h3 id="product-range-title">Our product range</h3><div class="product-range-grid">
-  <article class="product-variant"><img src="images/window-1.png" alt="Fixed Windows product example"><h4>Fixed Windows</h4><p>Fixed window option.</p></article>
-  <article class="product-variant"><img src="images/window-2.png" alt="Sliding Windows product example"><h4>Sliding Windows</h4><p>Sliding window option.</p></article>
-  <article class="product-variant"><img src="images/door-1.png" alt="Casement Doors and Windows product example"><h4>Casement Doors and Windows</h4><p>Casement door and window option.</p></article>
+  <article class="product-variant"><img src="images/Fixed Windows.jpeg" alt="Fixed Windows product example"><h4>Fixed Windows</h4><p>Fixed window option.</p></article>
+  <article class="product-variant"><img src="images/door-1.png" alt="Sliding Windows product example"><h4>Sliding Windows</h4><p>Sliding window option.</p></article>
+  <article class="product-variant"><img src="images/window-2.png" alt="Casement Doors and Windows product example"><h4>Casement Doors and Windows</h4><p>Casement door and window option.</p></article>
   <article class="product-variant"><img src="images/door-2.png" alt="Sliding Doors and Windows product example"><h4>Sliding Doors and Windows</h4><p>Sliding door and window option.</p></article>
+  <article class="product-variant"><img src="images/Tilt and Turn Windows.jpg" alt="Tilt and Turn Windows product example"><h4>Tilt and Turn Windows</h4><p>Opens inward at the top for safe ventilation, or swings open fully for easy cleaning.</p></article>
+  <article class="product-variant"><img src="images/Slide and Fold Doors.jpg" alt="Slide and Fold Doors product example"><h4>Slide and Fold Doors</h4><p>Large sliding panels that fold back to open a wide space to the outdoors.</p></article>
+  <article class="product-variant"><img src="images/Ventilation Windows.jpg" alt="Ventilation Windows product example"><h4>Ventilation Windows</h4><p>Small opening windows that let fresh air in while keeping the room secure.</p></article>
+  <article class="product-variant"><img src="images/Bay Windows.jpg" alt="Bay Windows product example"><h4>Bay Windows</h4><p>Windows that project outward from the wall, adding light and extra space to a room.</p></article>
 </div>`;
 document.querySelector('#products .container')?.appendChild(productRange);
 
-// Use the available similar stamp and logo filenames when exact names are not present.
+// Keep the remaining trust badges and the Terms link together.
 const trustBadges = document.querySelector('.trust-badges');
 if (trustBadges) {
-  trustBadges.innerHTML = `<span class="trust-badge"><img src="images/bsi-stamp.png" alt="BSI ISO 9001:2015 certification mark"><span>ISO 9001:2015 certified (BSI).</span></span><span class="trust-badge"><img src="images/skz-stamp.png" alt="Quality approved"><span>Quality approved.</span></span><span class="trust-badge"><span>20-year warranty on products and service<sup>*</sup></span></span><span class="trust-badge">100% lead-free and termite-free</span>`;
+  trustBadges.innerHTML = `<span class="trust-badge"><span>20-year warranty on products and service<sup>*</sup></span></span><span class="trust-badge">100% lead-free and termite-free</span>`;
   const note = document.createElement('p');
   note.className = 'warranty-note';
   note.innerHTML = '*<a href="terms.html">Terms &amp; Conditions</a> apply.';
