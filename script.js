@@ -10,7 +10,7 @@ headerLogo?.addEventListener('error', () => {
 });
 
 // Use one clean inline WhatsApp mark everywhere while keeping the existing links intact.
-const officialWhatsAppImage = '<img src="images/whatsapp-icon.svg" alt="" width="24" height="24">';
+const officialWhatsAppImage = '<img src="images/whatsapp-icon.svg" alt="WhatsApp contact icon" width="32" height="32">';
 document.querySelectorAll('.whatsapp-icon').forEach((link) => {
   link.setAttribute('aria-label', 'WhatsApp Ozone Kerala');
   link.querySelector('svg')?.remove();
@@ -167,14 +167,14 @@ const productRange = document.createElement('section');
 productRange.className = 'product-range';
 productRange.setAttribute('aria-labelledby', 'product-range-title');
 productRange.innerHTML = `<h3 id="product-range-title">Our product range</h3><div class="product-range-grid">
-  <article class="product-variant"><img src="images/Fixed Windows.jpeg" alt="Fixed Windows product example"><h4>Fixed Windows</h4><p>Fixed window option.</p></article>
-  <article class="product-variant"><img src="images/door-1.png" alt="Sliding Windows product example"><h4>Sliding Windows</h4><p>Sliding window option.</p></article>
-  <article class="product-variant"><img src="images/window-2.png" alt="Casement Doors and Windows product example"><h4>Casement Doors and Windows</h4><p>Casement door and window option.</p></article>
-  <article class="product-variant"><img src="images/door-2.png" alt="Sliding Doors and Windows product example"><h4>Sliding Doors and Windows</h4><p>Sliding door and window option.</p></article>
-  <article class="product-variant"><img src="images/Tilt and Turn Windows.jpg" alt="Tilt and Turn Windows product example"><h4>Tilt and Turn Windows</h4><p>Opens inward at the top for safe ventilation, or swings open fully for easy cleaning.</p></article>
-  <article class="product-variant"><img src="images/Slide and Fold Doors.jpg" alt="Slide and Fold Doors product example"><h4>Slide and Fold Doors</h4><p>Large sliding panels that fold back to open a wide space to the outdoors.</p></article>
-  <article class="product-variant"><img src="images/Ventilation Windows.jpg" alt="Ventilation Windows product example"><h4>Ventilation Windows</h4><p>Small opening windows that let fresh air in while keeping the room secure.</p></article>
-  <article class="product-variant"><img src="images/Bay Windows.jpg" alt="Bay Windows product example"><h4>Bay Windows</h4><p>Windows that project outward from the wall, adding light and extra space to a room.</p></article>
+  <article class="product-variant"><img src="images/Fixed Windows.jpeg" alt="Fixed Windows product example" width="1600" height="1200" loading="lazy"><h4>Fixed Windows</h4><p>Fixed window option.</p></article>
+  <article class="product-variant"><img src="images/door-1.png" alt="Sliding Windows product example" width="600" height="317" loading="lazy"><h4>Sliding Windows</h4><p>Sliding window option.</p></article>
+  <article class="product-variant"><img src="images/window-2.png" alt="Casement Doors and Windows product example" width="591" height="341" loading="lazy"><h4>Casement Doors and Windows</h4><p>Casement door and window option.</p></article>
+  <article class="product-variant"><img src="images/door-2.png" alt="Sliding Doors and Windows product example" width="572" height="253" loading="lazy"><h4>Sliding Doors and Windows</h4><p>Sliding door and window option.</p></article>
+  <article class="product-variant"><img src="images/Tilt and Turn Windows.jpg" alt="Tilt and Turn Windows product example" width="1199" height="585" loading="lazy"><h4>Tilt and Turn Windows</h4><p>Opens inward at the top for safe ventilation, or swings open fully for easy cleaning.</p></article>
+  <article class="product-variant"><img src="images/Slide and Fold Doors.jpg" alt="Slide and Fold Doors product example" width="600" height="338" loading="lazy"><h4>Slide and Fold Doors</h4><p>Large sliding panels that fold back to open a wide space to the outdoors.</p></article>
+  <article class="product-variant"><img src="images/Ventilation Windows.jpg" alt="Ventilation Windows product example" width="1200" height="800" loading="lazy"><h4>Ventilation Windows</h4><p>Small opening windows that let fresh air in while keeping the room secure.</p></article>
+  <article class="product-variant"><img src="images/Bay Windows.jpg" alt="Bay Windows product example" width="736" height="552" loading="lazy"><h4>Bay Windows</h4><p>Windows that project outward from the wall, adding light and extra space to a room.</p></article>
 </div>`;
 document.querySelector('#products .container')?.appendChild(productRange);
 
@@ -188,7 +188,7 @@ if (trustBadges) {
   trustBadges.after(note);
 }
 const prominanceNote = document.querySelector('.prominance-note');
-if (prominanceNote) prominanceNote.innerHTML = '<img src="images/prominance-logo.png" alt="Prominance uPVC logo"><span>Built with Prominance uPVC systems.</span>';
+if (prominanceNote) prominanceNote.innerHTML = '<img src="images/prominance-logo.png" alt="Prominance uPVC logo" width="242" height="72" loading="lazy"><span>Built with Prominance uPVC systems.</span>';
 
 document.getElementById('current-year').textContent = new Date().getFullYear();
 
@@ -201,6 +201,10 @@ if (!document.querySelector('.legal-links')) {
 }
 
 const enquiryForm = document.getElementById('enquiry-form');
+const contactDetails = document.querySelector('.contact-details');
+if (contactDetails && !contactDetails.querySelector('a[href^="mailto:"]')) {
+  contactDetails.insertAdjacentHTML('beforeend', '<a href="mailto:enquires@ozonekerala.com"><strong>Email</strong><span>enquires@ozonekerala.com</span></a>');
+}
 if (enquiryForm) {
   const submitButton = enquiryForm.querySelector('button[type="submit"]');
   const formStatus = document.getElementById('form-status');
@@ -245,7 +249,7 @@ if (!hasSeenSplash) {
   splash.className = 'splash-screen';
   splash.setAttribute('role', 'status');
   splash.setAttribute('aria-label', 'Loading Ozone Kerala');
-  splash.innerHTML = '<img class="splash-logo" src="images/ozone-logo.png" alt="Ozone Kerala logo"><span class="splash-fallback" hidden>Ozone Kerala</span>';
+  splash.innerHTML = '<img class="splash-logo" src="images/ozone-logo.png" alt="Ozone Kerala logo" width="592" height="273"><span class="splash-fallback" hidden>Ozone Kerala</span>';
   const splashLogo = splash.querySelector('.splash-logo');
   const splashLogoFallback = splash.querySelector('.splash-fallback');
   splashLogo.addEventListener('error', () => {
